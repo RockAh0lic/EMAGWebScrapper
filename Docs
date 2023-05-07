@@ -1,0 +1,16 @@
+Pentru interactionarea cu platforma eMAG am utilizat pachetul Selenium.
+
+Procedura de rulare cuprinde urmatorul set de pasi:
+
+1. Accesarea paginii principale emag.ro
+2. Derularea prin roll-down-ul "Produse" miscand cursorul deasupra tutror itemilor pentru a genera submeniurile acestora
+3. Navigarea prin fiecare item al fiecarui meniu pentru a verifica existenta unui element ce detine clasa "label", acesta fiind identificatorul pentru markerii "Nou", "Info", "Promo"
+4. Selectarea link-urilor specifice elementelor gasite
+5. Accesarea fiecarui link individual si cautarea unui element ce are atribuita clasa "js-products-container" daca acesta nu exista se va trece la urmatorul link din lista
+6. Pe paginile unde este gasit elementul cautat la pasul anterior se cauta toate produsele care au elemente ce au atribuit clasele "extra-badge" sau "badge"
+7. Se acceseaza elementele respective si se navigheaza in parintii acestora pentru a obtine link-ul catre produs, numele si categoria din care face parte
+8. Toate artricolele cu badge sunt salvate in tabloul "produse"
+9. Se repeta aceeasi procedura pentru cea de-a doua pagina de produse, daca este cazul
+10. In situatia in care sunt gasite articole care au fost deja adaugate (avand mai multe badge-uri), categoria acestuia va fi completata cu noul badge, deci nu se va adauga o noua intrare in tabloul "produse"
+11. Dupa accesarea tuturor linkurilor toate produsele din "produse" vor fi scrise in fisierul "ArticoleExtrase.csv"
+
