@@ -1,4 +1,4 @@
-# Instructiuni dependinte:
+# Instructiuni:
 
 - rulati: pip3 install selenium   
 
